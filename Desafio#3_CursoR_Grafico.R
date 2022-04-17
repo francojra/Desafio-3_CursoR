@@ -49,11 +49,11 @@ font_families() # Verificar fontes disponíveis
 # Gráfico ----------------------------------------------------------------------------------------------------------------------------------
 
 plot <- ggplot(dados_starwars) +
-  geom_point(aes(x = massa, y = altura), color = "yellow", shape = 18, size = 3) +
+  geom_point(aes(x = massa, y = altura), color = "yellow", shape = 18) +
   theme(
-    plot.title = element_text(hjust = 0.5, color = "yellow", family = "Starjout", size = 22),
-    plot.subtitle = element_text(hjust = 0.5, color = "yellow", family = "Starjout", size = 12),
-    axis.title = element_text(color = "yellow", family = "Starjout", size = 12),
+    plot.title = element_text(hjust = 0.5, color = "yellow", family = "Starjout", size = 25),
+    plot.subtitle = element_text(hjust = 0.5, color = "yellow", family = "Starjout", size = 15),
+    axis.title = element_text(color = "yellow", family = "Starjout", size = 15),
     axis.text = element_text(color = "yellow", family = "Starjout"),
     panel.grid.minor.x = element_blank(),
     panel.grid.major.x = element_blank(),
@@ -62,9 +62,9 @@ plot <- ggplot(dados_starwars) +
     panel.background = element_rect(fill = "transparent"),
     plot.background = element_rect(fill = "transparent")) +
     annotate(geom = "point", x = 136, y = 202, 
-             color = "red", size = 3, shape = 18) +
-    annotate(geom = "label", x = 126, y = 209, 
-             label = "DARTH VADER", hjust = "left",
+             color = "red", shape = 18) +
+    annotate(geom = "label", x = 121, y = 213.2, 
+             label = "Darth Vader", hjust = "left",
              fill = "red", color = "black", family = "Starjout") +
     scale_x_continuous(limits =  c(0, 200)) +
     labs(x = "Massa", y = "Altura", title = "Star Wars", subtitle = "Way the force be with you") 
@@ -77,6 +77,8 @@ draw_image(halign = 1, valign = 0, width = 1, height = 1, scale = 1.1,
            image = "11836.jpg") +
   draw_plot(plot)
 
+# Salvar gráfico ---------------------------------------------------------------------------------------------------------------------------
 
+ggsave("plot.png", width = 12, height = 7, units = "cm")
 
  
