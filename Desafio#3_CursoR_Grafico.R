@@ -39,9 +39,9 @@ point_vader
 
 # Adicionando a fonte ----------------------------------------------------------------------------------------------------------------------
 
-### Adicionar fonte do sistema windows
+### Adicionar fonte Star Wars ao sistema windows
 
-sysfonts::font_add("Starjedi", regular = "Starjedi.ttf")
+sysfonts::font_add("Starjout", regular = "Starjout.ttf")
 library(showtext) # Carregar pacote antes de gerar o gráfico
 showtext_auto()
 font_families() # Verificar fontes disponíveis
@@ -51,10 +51,10 @@ font_families() # Verificar fontes disponíveis
 plot <- ggplot(dados_starwars) +
   geom_point(aes(x = massa, y = altura), color = "yellow", shape = 18, size = 3) +
   theme(
-    plot.title = element_text(hjust = 0.5, color = "yellow", family = "Starjedi", size = 22),
-    plot.subtitle = element_text(hjust = 0.5, color = "yellow", family = "Starjedi", size = 12),
-    axis.title = element_text(color = "yellow", family = "Starjedi", size = 12),
-    axis.text = element_text(color = "yellow", family = "Starjedi"),
+    plot.title = element_text(hjust = 0.5, color = "yellow", family = "Starjout", size = 22),
+    plot.subtitle = element_text(hjust = 0.5, color = "yellow", family = "Starjout", size = 12),
+    axis.title = element_text(color = "yellow", family = "Starjout", size = 12),
+    axis.text = element_text(color = "yellow", family = "Starjout"),
     panel.grid.minor.x = element_blank(),
     panel.grid.major.x = element_blank(),
     panel.grid.major.y = element_line(color = "gray9"),
@@ -63,9 +63,9 @@ plot <- ggplot(dados_starwars) +
     plot.background = element_rect(fill = "transparent")) +
     annotate(geom = "point", x = 136, y = 202, 
              color = "red", size = 3, shape = 18) +
-    annotate(geom = "label", x = 128, y = 209, 
-             label = "Darth Vader", hjust = "left",
-             fill = "red", color = "black", family = "Starjedi") +
+    annotate(geom = "label", x = 126, y = 209, 
+             label = "DARTH VADER", hjust = "left",
+             fill = "red", color = "black", family = "Starjout") +
     scale_x_continuous(limits =  c(0, 200)) +
     labs(x = "Massa", y = "Altura", title = "Star Wars", subtitle = "Way the force be with you") 
 plot
